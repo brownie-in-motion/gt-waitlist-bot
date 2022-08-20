@@ -1,0 +1,11 @@
+{
+  "name": "waitlists",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "@discordjs/rest": "^1.0.1",
+    "better-sqlite3": "^7.6.2",
+    "discord.js": "^14.2.0"
+  }
+}
