@@ -1,5 +1,10 @@
 # GT Waitlist Bot
 
+Monitors full waitlists for open spots.
+
+This is among the goriest code I have ever written. It also became useless to
+me as soon as I finished. The Abstract Algebra waitlist moves fast, I guess.
+
 ## Usage
 
 Since I'm lazy, this has no permissions set up and does not work for multiple
