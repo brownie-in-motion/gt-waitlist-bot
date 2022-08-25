@@ -47,8 +47,11 @@ module.exports = {
   async exists(id) {
     return (await info(id)) !== undefined;
   },
-  async waitlist(id) {
+  async addable(id) {
     const data = await info(id);
-    return data.waitlist.remaining > 0;
+    return (
+        data.waitlist.remaining > 0 ||
+        data.waitlist.actual < data.seats.remaining
+    )
   },
 };

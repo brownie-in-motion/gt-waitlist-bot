@@ -321,7 +321,7 @@ setInterval(async () => {
   for (const { crn: id, available } of courses) {
     const data = {};
     try {
-      data.spots = Boolean(await api.waitlist(id));
+      data.spots = Boolean(await api.addable(id));
     } catch {
       console.log(`error while fetching ${id}`);
       continue
@@ -333,9 +333,9 @@ setInterval(async () => {
     const watchers = database.getCourseWatchers(id);
     const ping = watchers.map((entry) => `<@${entry.user}>`).join('');
     if (data.spots) {
-      await channel.send(`Waitlist spot for ${id} has opened!\n${ping}`);
+      await channel.send(`Class ${id} can be added!\n${ping}`);
     } else {
-      await channel.send(`Waitlist for ${id} is full.\n${ping}`);
+      await channel.send(`Class ${id} is no longer addable.\n${ping}`);
     }
   }
 }, config.poll)
